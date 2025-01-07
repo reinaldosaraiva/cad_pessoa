@@ -25,7 +25,7 @@ db_dependency = Annotated[Session, Depends(get_db)]
 @router.get('/', status_code=status.HTTP_200_OK)
 async def get_pessoas(db: db_dependency):
     
-    return db.query(models).all()
+    return db.query(models.Pessoa).all()
 
 @router.post('/add', status_code=status.HTTP_201_CREATED)
 async def add_pessoa(db: db_dependency, pessoa: CreatePessoaSchema):

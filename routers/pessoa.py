@@ -47,7 +47,7 @@ async def delete_pessoa(db: db_dependency, id: int):
     
     db.commit()
 
-@router.put('/update/{id}', status_code=status.HTTP_200_OK)
+@router.put('/update/{id}', status_code=status.HTTP_204_NO_CONTENT)
 async def update_pessoa(db: db_dependency, id: int, pessoa: CreatePessoaSchema):
     
     pessoa_model = db.query(models.Pessoa).filter(models.Pessoa.id == id).first()

@@ -6,10 +6,14 @@ A FastAPI-based application for managing person records.
 
 The project is organized as follows:
 - `core/` - Core application logic and models
+  - `pessoa/` - Person management module
+  - `telefone/` - Phone management module
+  - `config/` - Application configuration
 - `main.py` - Application entry point
 - `Dockerfile` - Container configuration
 - `docker-compose.yml` - Docker Compose configuration for easy deployment
 - `pyproject.toml` and `poetry.lock` - Python dependency management with Poetry
+- `tests/` - Unit and integration tests
 
 ## Getting Started
 

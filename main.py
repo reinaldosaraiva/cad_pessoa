@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from core.pessoa.router import router as pessoa_router
+from core.telefone.router import router as telefone_router
 
 app = FastAPI(
     title="Cadastro de Pessoas API",
@@ -19,6 +20,7 @@ app.add_middleware(
 
 # Incluindo os routers
 app.include_router(pessoa_router)
+app.include_router(telefone_router)
 
 @app.get("/")
 async def root():

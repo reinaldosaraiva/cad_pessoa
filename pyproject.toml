@@ -17,6 +17,18 @@ asyncpg = "^0.30.0"
 pytest = "^8.3.4"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.25.3"
+httpx = "^0.28.1"
+aiosqlite = "^0.21.0"
+pytest-cov = "^6.0.0"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short --cov=core --cov-report=term-missing --cov-report=html --cov-fail-under=80"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
